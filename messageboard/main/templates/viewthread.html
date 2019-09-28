@@ -15,4 +15,19 @@
             {{ thread.content|linebreaks }}
         </div>
     </div>
+
+    {% for reply in replies %}
+        <div class="reply">
+            {{ reply.content|linebreaks }}
+        </div>
+    {% endfor %}
+
+    <form action="." method="post"> {% csrf_token %}
+        <div>Reply to Thread</div>
+
+        {{ form.as_p }}
+
+        <input type="submit" value="Reply">
+    </form>
+
 {% endblock %}

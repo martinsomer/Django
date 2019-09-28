@@ -24,5 +24,20 @@ def index(request):
     return render(request, 'index.html', { 'threads': threads })
 
 def view_thread(request, id):
-    thread = Thread.objects.get(id = id)    
-    return render(request, 'viewthread.html', { 'thread': thread })
+    thread = Thread.objects.get(id = id)
+    replies = Reply.objects.filter(thread = thread)
+    
+    form = NewReplyForm()
+    
+    if request.method == 'POST':
+        form = NewReplyForm(request.POST)
+        
+    
+        if form.is_valid():
+            content = form.cleaned_data['content']
+            
+            reply = Reply(thread = thread, content = content)
+            reply.save()
+            return redirect('.')
+
+    return render(request, 'viewthread.html', { 'thread': thread, 'replies': replies, 'form': form })
