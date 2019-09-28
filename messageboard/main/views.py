@@ -20,3 +20,7 @@ def create_thread(request):
 def index(request):
     threads = Thread.objects.all().order_by('-id')
     return render(request, 'index.html', { 'threads': threads })
+
+def view_thread(request, id):
+    thread = Thread.objects.get(id = id)    
+    return render(request, 'viewthread.html', { 'thread': thread })
