@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block header %}
+    <title>Messageboard</title>
+{% endblock %}
+
+{% block content %}
+    <div class="create_thread">
+        <a href="new/">Create New Thread</a>
+    </div>
+
+    {% for thread in threads %}
+        <div class="thread">
+            
+            <div class="thread_title">
+                {{ thread.title }}
+            </div>
+            
+            <div class="thread_content">
+                {{ thread.content|linebreaks }}
+            </div>
+            
+        </div>
+    {% endfor %}
+{% endblock %}

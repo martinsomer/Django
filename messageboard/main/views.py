@@ -16,3 +16,7 @@ def create_thread(request):
             thread.save()
     
     return render(request, 'newthread.html', { 'form': form })
+
+def index(request):
+    threads = Thread.objects.all().order_by('-id')
+    return render(request, 'index.html', { 'threads': threads })
