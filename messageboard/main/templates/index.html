@@ -13,7 +13,7 @@
         <div class="thread">
             
             <div class="thread_title">
-                {{ thread.title }}
+                <a href="{{ thread.get_absolute_url }}" >{{ thread.title }}</a>
             </div>
             
             <div class="thread_content">

@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .forms import *
 from .models import *
 
@@ -14,6 +14,8 @@ def create_thread(request):
             
             thread = Thread(title = title, content = content)
             thread.save()
+            
+            return redirect(thread.get_absolute_url())
     
     return render(request, 'newthread.html', { 'form': form })
 

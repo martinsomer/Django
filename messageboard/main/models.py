@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 class Thread(models.Model):
     title = models.CharField('', max_length = 50)
@@ -6,3 +7,6 @@ class Thread(models.Model):
     
     def __str__(self):
         return self.title
+    
+    def get_absolute_url(self):
+        return reverse('view_thread', kwargs = { 'id': self.id })
