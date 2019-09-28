@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block header %}
+    <title>Messageboard - Create New Thread</title>
+{% endblock %}
+
+{% block content %}
+    <div class="top">
+        <a href="/">Back</a>
+        <span>Create New Thread</span>
+    </div>
+    
+    <form action="." method="post"> {% csrf_token %}
+
+        {{ form.as_p }}
+
+        <input type="submit" value="Create">
+    </form>
+{% endblock %}

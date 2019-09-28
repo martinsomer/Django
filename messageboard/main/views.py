@@ -1,3 +1,18 @@
 from django.shortcuts import render
+from .forms import *
+from .models import *
 
-# Create your views here.
+def create_thread(request):
+    form = NewThreadForm()
+    
+    if request.method == 'POST':
+        form = NewThreadForm(request.POST)
+    
+        if form.is_valid():
+            title = form.cleaned_data['title']
+            content = form.cleaned_data['content']
+            
+            thread = Thread(title = title, content = content)
+            thread.save()
+    
+    return render(request, 'newthread.html', { 'form': form })
