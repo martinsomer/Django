@@ -1,0 +1,104 @@
+* {
+    font-family: ebrima, verdana, sans-serif;
+}
+
+body {
+	background-color: #212121;
+}
+
+.create_thread {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.create_thread a, .create_thread a:visited {
+    color: #4CAF50;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.thread_title {
+    background-color: #1f72a6;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.thread_title, .thread_title a, .thread_title a:visited {
+    color: white;
+    font-size: 1.1em;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.thread_content {
+    color: white;
+    margin-left: 30px;
+    padding: 5px;
+}
+
+.thread_content > p, .reply > p {
+    margin: 0;
+}
+
+.thread {
+    background-color: #2e2e2e;
+    margin: 15px 20px;
+    border-radius: 5px;
+}
+
+input[type = submit], input[type = sumbit]:hover {
+    border-radius: 5px;
+    color: white;
+    background-color: #4CAF50;
+    border: none;
+    padding: 3px 5px;
+    font-weight: bold;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+.top {
+    text-align: center;
+}
+
+.top > a, .top > a:visited {
+    float: left;
+    color: #4CAF50;
+}
+
+.top > span {
+    color: #4CAF50;
+    font-size: 1.3em;
+}
+
+form {
+    text-align: center;
+}
+
+form input[type = text] {
+    width: 300px;
+}
+
+textarea {
+    resize: vertical;
+    width: 300px;
+    height: 100px;
+}
+
+form > div {
+    margin-top: 60px;
+    color: #4CAF50;
+    font-size: 1.3em;
+}
+
+body > a {
+    color: #4CAF50;
+}
+
+.reply {
+    background-color: #2e2e2e;
+    color: white;
+    padding: 5px 10px;
+    margin: 10px 20px 10px 50px;
+    border-radius: 5px;
+}
